@@ -9,14 +9,34 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
-    
+    "baseUrl": "src",
+    "paths": {
+      "@entities/*": [
+        "./entities/*"
+      ],
+      "@widgets/*": [
+        "./shared/*"
+      ],
+      "@shared/*": [
+        "./widgets/*"
+      ],
+      "@features/*": [
+        "./features/*"
+      ],
+    }
   },
   "files": [
     "src/app/index.tsx",
     "./module.d.ts"
   ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "strict": true,
   "noImplicitAny": true
 }
