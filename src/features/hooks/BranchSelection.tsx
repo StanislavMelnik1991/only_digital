@@ -24,16 +24,24 @@ export const useBranchSelection = () => {
   const [isPrevDisabled, setIsPrevDisabled] = useState<boolean>(false)
   const [isNextDisabled, setIsNextDisabled] = useState<boolean>(false)
 
-  const selectBranch = useCallback(
+  const changeData = useCallback(
     (index: number) => {
       setActive(index)
       setData(historyData[index].data)
-      swiperRef?.slideTo(index, 0, false)
     },
-    [historyData, swiperRef]
+    [historyData]
+  )
+  const selectBranch = useCallback(
+    (index: number) => {
+      changeData(index)
+      swiperRef?.slideTo(index)
+    },
+    [changeData, swiperRef]
   )
 
   const onChange = useCallback((slider: Swiper) => {
+    const { activeIndex } = slider
+    changeData(activeIndex)
     setIsPrevDisabled(slider.isBeginning)
     setIsNextDisabled(slider.isEnd)
   }, [])
@@ -45,18 +53,12 @@ export const useBranchSelection = () => {
     },
     [onChange]
   )
-  const handleNext = useCallback(
-    () => {
-      swiperRef?.slideNext()
-    },
-    [swiperRef]
-  )
-  const handlePrev = useCallback(
-    () => {
-      swiperRef?.slidePrev()
-    },
-    [swiperRef]
-  )
+  const handleNext = useCallback(() => {
+    swiperRef?.slideNext()
+  }, [swiperRef])
+  const handlePrev = useCallback(() => {
+    swiperRef?.slidePrev()
+  }, [swiperRef])
 
   return {
     active,
