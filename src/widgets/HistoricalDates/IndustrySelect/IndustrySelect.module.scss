@@ -9,6 +9,22 @@
   flex-direction: column;
   margin-top: -89px;
   margin-bottom: -48px;
+
+  &:before {
+    position: absolute;
+    left: -80px;
+    content: '';
+    width: 1440px;
+    border-bottom: 1px $border_color solid;
+  }
+
+  &:after {
+    position: fixed;
+    top: 0;
+    content: '';
+    height: 100vh;
+    border-left: 1px $border_color solid;
+  }
 }
 
 .swiper {
