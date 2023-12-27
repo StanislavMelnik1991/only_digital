@@ -1,0 +1,29 @@
+@import '@shared/styles/colors';
+
+.wrapper {
+  display: flex;
+  position: relative;
+  max-width: 353px;
+
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 67px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: $black_blue;
+  margin: 0;
+
+
+  &:before {
+    content: '';
+    width: 4px;
+    height: 100%;
+    background: $gradient_primary;
+    position: absolute;
+    margin-left: -80px;
+
+    @media screen and (max-width: 1440px) {
+      margin-left: -20px;
+    }
+  }
+}

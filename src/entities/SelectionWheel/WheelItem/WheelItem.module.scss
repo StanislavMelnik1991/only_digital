@@ -1,0 +1,65 @@
+@import '@shared/styles/colors';
+
+$animation-duration: 0.5s;
+
+.wrapper {
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transition: all calc($animation-duration * 2);
+  user-select: none;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $black_blue;
+  color: $black_blue;
+  overflow: hidden;
+  transition: all $animation-duration;
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  &:hover {
+    width: 56px;
+    height: 56px;
+    background-color: $white;
+    border: 1px $border_color solid;
+  }
+}
+
+.title {
+  display: none;
+  position: absolute;
+  left: calc(20px + 28px);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.active {
+  width: 56px;
+  height: 56px;
+  background-color: $white;
+  border: 1px $border_color solid;
+
+  .title {
+    display: flex;
+  }
+}

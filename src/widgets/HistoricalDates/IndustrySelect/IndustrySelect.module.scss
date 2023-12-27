@@ -1,0 +1,36 @@
+@import '@shared/styles/colors';
+
+.wrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -89px;
+  margin-bottom: -48px;
+}
+
+.swiper {
+  display: flex;
+  position: absolute;
+  height: 160px;
+  top: 185px;
+}
+
+.text {
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 160px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: $primary;
+  display: inline-flex !important;
+  justify-content: center;
+  gap: 80px;
+  user-select: none;
+}
+
+.secondary {
+  color: $secondary;
+}

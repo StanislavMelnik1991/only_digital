@@ -1,0 +1,14 @@
+@import '@shared/styles/colors';
+
+.wrapper {
+  display: flex;
+  width: 530px;
+  height: 530px;
+  border-radius: 50%;
+  border: 1px $border_color solid;
+  z-index: 10;
+  position: relative;
+  background-clip: padding-box;
+}
+
+

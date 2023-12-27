@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  position: relative;
+  margin-top: 56px;
+}
+
+.prev {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: -60px;
+
+  &:disabled {
+    display: none;
+  }
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  right: -60px;
+
+  &:disabled {
+    display: none;
+  }
+}

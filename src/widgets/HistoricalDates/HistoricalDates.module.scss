@@ -1,0 +1,33 @@
+@import 'src/shared/styles/colors';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  border: 1px $border_color solid;
+  border-top: none;
+  border-bottom: none;
+  padding: 0 160px 0 80px;
+
+  @media screen and (max-width: 1440px) {
+    padding: 20px;
+    margin: auto;
+  }
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.currentClass {
+  display: flex;
+  padding: 10px;
+  background-color: blue;
+}

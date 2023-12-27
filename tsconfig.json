@@ -8,6 +8,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "moduleResolution": "Node",
     "baseUrl": "src",
     "paths": {
@@ -15,10 +16,10 @@
         "./entities/*"
       ],
       "@widgets/*": [
-        "./shared/*"
+        "./widgets/*"
       ],
       "@shared/*": [
-        "./widgets/*"
+        "./shared/*"
       ],
       "@features/*": [
         "./features/*"
