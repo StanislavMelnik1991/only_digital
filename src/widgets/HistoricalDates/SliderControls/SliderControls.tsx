@@ -1,17 +1,26 @@
-import styles from './SliderControls.module.scss'
-import { ArrowIcon } from '@entities/ArrowIcon/ArrowIcon'
+import styles from "./SliderControls.module.scss";
+import { ArrowIcon } from "@entities/ArrowIcon/ArrowIcon";
 
 interface Props {
-  slides: number
-  activeSlide: number
-  isNextDisabled?: boolean
-  isPrevDisabled?: boolean
-  handleNext: () => void
-  handlePrev: () => void
+  slides: number;
+  activeSlide: number;
+  isNextDisabled?: boolean;
+  isPrevDisabled?: boolean;
+  handleNext: () => void;
+  handlePrev: () => void;
 }
 
-export const SliderControls = ({ activeSlide, slides, handleNext, handlePrev, isNextDisabled, isPrevDisabled }: Props) => {
-  const legend = `${(activeSlide + 1).toString().padStart(2, '0')}/${slides.toString().padStart(2, '0')}`
+export const SliderControls = ({
+  activeSlide,
+  slides,
+  handleNext,
+  handlePrev,
+  isNextDisabled,
+  isPrevDisabled,
+}: Props) => {
+  const legend = `${(activeSlide + 1).toString().padStart(2, "0")}/${slides
+    .toString()
+    .padStart(2, "0")}`;
 
   return (
     <div className={styles.wrapper}>
@@ -33,5 +42,5 @@ export const SliderControls = ({ activeSlide, slides, handleNext, handlePrev, is
         />
       </div>
     </div>
-  )
-}
+  );
+};

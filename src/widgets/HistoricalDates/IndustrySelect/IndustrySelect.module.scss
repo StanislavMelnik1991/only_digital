@@ -25,6 +25,13 @@
     height: 100vh;
     border-left: 1px $border_color solid;
   }
+
+  @media screen and (max-width: 1440px) {
+    &:before {
+      width: calc(40px + 100%);
+      left: -20px;
+    }
+  }
 }
 
 .swiper {
@@ -45,6 +52,11 @@
   justify-content: center;
   gap: 80px;
   user-select: none;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 56px;
+    line-height: 72px;
+  }
 }
 
 .secondary {

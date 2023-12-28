@@ -4,6 +4,10 @@
   margin-top: 56px;
 }
 
+.slide {
+  width: 320px;
+}
+
 .prev {
   position: absolute;
   top: calc(50% - 20px);
@@ -11,6 +15,10 @@
 
   &:disabled {
     display: none;
+  }
+
+  @media screen and (max-width: 1440px) {
+    display: none !important;
   }
 }
 
@@ -21,5 +29,9 @@
 
   &:disabled {
     display: none;
+  }
+
+  @media screen and (max-width: 1440px) {
+    display: none !important;
   }
 }

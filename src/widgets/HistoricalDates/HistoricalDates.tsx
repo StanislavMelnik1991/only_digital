@@ -1,10 +1,9 @@
-import { Title } from '@entities/Title/Title'
-import styles from './HistoricalDates.module.scss'
-import { IndustrySelect } from './IndustrySelect/IndustrySelect'
-import { useBranchSelection } from '@features/hooks/BranchSelection'
-import { DatesSlider } from './DatesSlider/DatesSlider'
-import { SliderControls } from './SliderControls/SliderControls'
-import 'swiper/css'
+import { Title } from "@entities/Title/Title";
+import styles from "./HistoricalDates.module.scss";
+import { IndustrySelect } from "./IndustrySelect/IndustrySelect";
+import { useBranchSelection } from "@features/hooks/BranchSelection";
+import { DatesSlider } from "./DatesSlider/DatesSlider";
+import { SliderControls } from "./SliderControls/SliderControls";
 
 export const HistoricalDates = () => {
   const {
@@ -18,8 +17,8 @@ export const HistoricalDates = () => {
     onChange,
     handleNext,
     handlePrev,
-    onSwiper
-  } = useBranchSelection()
+    onSwiper,
+  } = useBranchSelection();
 
   return (
     <div className={styles.wrapper}>
@@ -42,5 +41,5 @@ export const HistoricalDates = () => {
       />
       <DatesSlider data={data} />
     </div>
-  )
-}
+  );
+};

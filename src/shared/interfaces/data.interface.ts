@@ -1,7 +1,7 @@
 export interface IHistoricalData {
-  title: string
+  title: string;
   data: Array<{
-    year: number
-    title: string
-  }>
+    year: number;
+    title: string;
+  }>;
 }

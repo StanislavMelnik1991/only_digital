@@ -1,12 +1,5 @@
 @import '@shared/styles/colors';
 
-body {
-  margin: 0;
-  font-family: 'PT Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: $white;
-}
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -35,16 +28,4 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--gray-2) $white !important;
-}
-
-.custom-scroll-black {
-  &::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--black) !important;
-    border: none !important;
-  }
 }

@@ -1,0 +1,39 @@
+@import './colors';
+@import './custom-scroll.scss';
+@import 'swiper/css';
+
+* {
+  box-sizing: border-box;
+  color: $black_blue;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  background-color: $white;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  position: relative;
+}
+
+section {
+  flex-grow: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

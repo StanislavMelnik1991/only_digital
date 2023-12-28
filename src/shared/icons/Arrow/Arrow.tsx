@@ -1,7 +1,7 @@
-import { type SVGProps, type Ref, forwardRef, memo } from 'react'
+import { type SVGProps, type Ref, forwardRef, memo } from "react";
 const SvgComponent = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={10}
@@ -18,7 +18,7 @@ const SvgComponent = (
       strokeWidth={2}
     />
   </svg>
-)
-const ForwardRef = forwardRef(SvgComponent)
-const Memo = memo(ForwardRef)
-export { Memo as Arrow }
+);
+const ForwardRef = forwardRef(SvgComponent);
+const Memo = memo(ForwardRef);
+export { Memo as Arrow };

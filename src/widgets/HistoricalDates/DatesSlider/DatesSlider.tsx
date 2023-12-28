@@ -1,19 +1,26 @@
-import styles from './DatesSlider.module.scss'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { DatesSlide } from '@entities/DatesSlide/DatesSlide'
-import { useDatesSlider } from '@features/hooks/DatesSlider'
-import { ArrowIcon } from '@entities/ArrowIcon/ArrowIcon'
+import styles from "./DatesSlider.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { DatesSlide } from "@entities/DatesSlide/DatesSlide";
+import { useDatesSlider } from "@features/hooks/DatesSlider";
+import { ArrowIcon } from "@entities/ArrowIcon/ArrowIcon";
 
 interface Props {
   data: Array<{
-    year: number
-    title: string
-  }>
+    year: number;
+    title: string;
+  }>;
 }
 
 export const DatesSlider = ({ data }: Props) => {
-  const { next, onSwiper, prev, isNextDisabled, isPrevDisabled, onChange } =
-    useDatesSlider()
+  const {
+    next,
+    onSwiper,
+    prev,
+    isNextDisabled,
+    isPrevDisabled,
+    onChange,
+    onResize,
+  } = useDatesSlider();
   return (
     <div className={styles.wrapper}>
       <ArrowIcon
@@ -32,13 +39,14 @@ export const DatesSlider = ({ data }: Props) => {
         height={135}
         onActiveIndexChange={onChange}
         onSwiper={onSwiper}
+        onResize={onResize}
       >
         {data.map((el) => {
           return (
-            <SwiperSlide key={el.year}>
+            <SwiperSlide className={styles.slide} key={el.year}>
               <DatesSlide {...el} />
             </SwiperSlide>
-          )
+          );
         })}
       </Swiper>
       <ArrowIcon
@@ -50,5 +58,5 @@ export const DatesSlider = ({ data }: Props) => {
         onClick={next}
       />
     </div>
-  )
-}
+  );
+};

@@ -1,17 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.scss'
-import { App } from './App'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./App";
+import "@shared/styles/index.scss";
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 
 if (rootElement !== null) {
-  const root = ReactDOM.createRoot(rootElement)
+  const root = ReactDOM.createRoot(rootElement);
   root.render(
     <React.StrictMode>
       <App />
-    </React.StrictMode>
-  )
+    </React.StrictMode>,
+  );
 } else {
-  console.log('root not found')
+  console.log("root not found");
 }
