@@ -5,11 +5,17 @@ interface Props {
   items: string[];
   onClick: (index: number) => void;
   active: number;
+  className?: string;
 }
 
-export const SelectionWheel = ({ items, onClick, active }: Props) => {
+export const SelectionWheel = ({
+  items,
+  onClick,
+  active,
+  className,
+}: Props) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${className}`}>
       {items.map((el, index) => {
         const angle =
           (360 / items.length) * (index + (items.length - active - 1));

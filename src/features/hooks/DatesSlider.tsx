@@ -1,7 +1,11 @@
 import { useCallback, useState } from "react";
 import { type Swiper } from "swiper/types";
 
-export const useDatesSlider = () => {
+interface Props {
+  setIsMobile: (val: boolean) => void;
+}
+
+export const useDatesSlider = ({ setIsMobile }: Props) => {
   const [sliderRef, setSliderRef] = useState<Swiper>();
   const [isPrevDisabled, setIsPrevDisabled] = useState<boolean>(false);
   const [isNextDisabled, setIsNextDisabled] = useState<boolean>(false);
@@ -13,10 +17,16 @@ export const useDatesSlider = () => {
     sliderRef?.slidePrev();
   }, [sliderRef]);
 
-  const onChange = useCallback((slider: Swiper) => {
-    setIsPrevDisabled(slider.isBeginning);
-    setIsNextDisabled(slider.isEnd);
-  }, []);
+  const onChange = useCallback(
+    (slider: Swiper) => {
+      setIsPrevDisabled(slider.isBeginning);
+      setIsNextDisabled(slider.isEnd);
+      const { innerWidth } = window;
+
+      setIsMobile(innerWidth <= 1200);
+    },
+    [setIsMobile],
+  );
 
   const onSwiper = useCallback(
     (slider: Swiper) => {
@@ -25,16 +35,12 @@ export const useDatesSlider = () => {
     },
     [onChange],
   );
-  const onResize = useCallback((slider: Swiper) => {
-    console.log(slider);
-  }, []);
 
   return {
     onSwiper,
     next,
     prev,
     onChange,
-    onResize,
     isPrevDisabled,
     isNextDisabled,
   };

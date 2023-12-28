@@ -49,7 +49,7 @@ export const ArrowIcon = ({
       disabled={disabled}
       onClick={onClick}
     >
-      <Arrow stroke={color} />
+      <Arrow stroke={color} width={width / 4} />
     </button>
   );
 };

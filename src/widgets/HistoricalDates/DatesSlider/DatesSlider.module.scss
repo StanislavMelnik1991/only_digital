@@ -1,11 +1,22 @@
+@import '@shared/styles/colors';
+
 .wrapper {
   display: flex;
   position: relative;
   margin-top: 56px;
+
+  @media screen and (max-width: 1200px) {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px $border_color solid;
+  }
 }
 
 .slide {
   width: 320px;
+  @media screen and (max-width: 1200px) {
+    width: 166px;
+  }
 }
 
 .prev {
@@ -34,4 +45,7 @@
   @media screen and (max-width: 1440px) {
     display: none !important;
   }
+}
+.nextSlide {
+  opacity: 0.5;
 }

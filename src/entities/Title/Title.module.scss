@@ -4,7 +4,6 @@
   display: flex;
   position: relative;
   max-width: 353px;
-
   font-size: 56px;
   font-weight: 700;
   line-height: 67px;
@@ -12,6 +11,7 @@
   text-align: left;
   color: $black_blue;
   margin: 0;
+  word-wrap: break-word;
 
 
   &:before {
@@ -21,9 +21,29 @@
     background: $gradient_primary;
     position: absolute;
     margin-left: -80px;
+  }
 
-    @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1440px) {
+
+    &:before {
       margin-left: -20px;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    margin-top: 60px;
+    font-size: 30px;
+    line-height: 36px;
+    max-width: 200px;
+  }
+
+  @media screen and (max-width: 440px) {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 150px;
+
+    &:before {
+      display: none;
     }
   }
 }

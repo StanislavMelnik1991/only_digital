@@ -8,6 +8,7 @@ interface Props {
   isPrevDisabled?: boolean;
   handleNext: () => void;
   handlePrev: () => void;
+  isMobile: boolean;
 }
 
 export const SliderControls = ({
@@ -17,6 +18,7 @@ export const SliderControls = ({
   handlePrev,
   isNextDisabled,
   isPrevDisabled,
+  isMobile,
 }: Props) => {
   const legend = `${(activeSlide + 1).toString().padStart(2, "0")}/${slides
     .toString()
@@ -28,14 +30,14 @@ export const SliderControls = ({
       <div className={styles.controls}>
         <ArrowIcon
           orientation="left"
-          width={50}
+          width={isMobile ? 25 : 50}
           className={styles.prev}
           disabled={isPrevDisabled}
           onClick={handlePrev}
         />
         <ArrowIcon
           orientation="right"
-          width={50}
+          width={isMobile ? 25 : 50}
           className={styles.prev}
           disabled={isNextDisabled}
           onClick={handleNext}

@@ -9,37 +9,35 @@ interface Props {
     year: number;
     title: string;
   }>;
+  isMobile: boolean;
+  setIsMobile: (val: boolean) => void;
 }
 
-export const DatesSlider = ({ data }: Props) => {
-  const {
-    next,
-    onSwiper,
-    prev,
-    isNextDisabled,
-    isPrevDisabled,
-    onChange,
-    onResize,
-  } = useDatesSlider();
+export const DatesSlider = ({ data, isMobile, setIsMobile }: Props) => {
+  const { next, onSwiper, prev, isNextDisabled, isPrevDisabled, onChange } =
+    useDatesSlider({ setIsMobile });
   return (
     <div className={styles.wrapper}>
       <ArrowIcon
         orientation="left"
         color="rgba(56, 119, 238, 1)"
         isHideBorder
+        width={40}
         backgroundColor="white"
         className={styles.prev}
         disabled={isPrevDisabled}
         onClick={prev}
       />
       <Swiper
-        slidesPerView={3}
-        spaceBetween={80}
+        slidesPerView={isMobile ? 1.5 : 3}
+        spaceBetween={isMobile ? 25 : 80}
         grabCursor
-        height={135}
+        height={isMobile ? 80 : 135}
         onActiveIndexChange={onChange}
+        slideNextClass={isMobile ? styles.nextSlide : undefined}
+        slidePrevClass={isMobile ? styles.nextSlide : undefined}
         onSwiper={onSwiper}
-        onResize={onResize}
+        onResize={onSwiper}
       >
         {data.map((el) => {
           return (
@@ -53,6 +51,7 @@ export const DatesSlider = ({ data }: Props) => {
         color="rgba(56, 119, 238, 1)"
         isHideBorder
         backgroundColor="white"
+        width={40}
         className={styles.next}
         disabled={isNextDisabled}
         onClick={next}

@@ -23,7 +23,12 @@ export const IndustrySelect = ({
 }: Props) => {
   return (
     <div className={styles.wrapper}>
-      <SelectionWheel active={active} onClick={selectBranch} items={branches} />
+      <SelectionWheel
+        className={styles.wheel}
+        active={active}
+        onClick={selectBranch}
+        items={branches}
+      />
       <div className={styles.swiper}>
         <Swiper
           modules={[Pagination]}
@@ -31,10 +36,10 @@ export const IndustrySelect = ({
           mousewheel={false}
           initialSlide={active}
           direction="vertical"
-          height={160}
           noSwipingClass={styles.text}
           onActiveIndexChange={onActiveIndexChange}
           onSwiper={onSwiper}
+          onResize={onSwiper}
         >
           {periods.map((el, index) => {
             return (
@@ -49,6 +54,7 @@ export const IndustrySelect = ({
           })}
         </Swiper>
       </div>
+      <h4 className={styles.title}>{branches[active]}</h4>
     </div>
   );
 };

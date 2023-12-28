@@ -14,7 +14,7 @@
     position: absolute;
     left: -80px;
     content: '';
-    width: 1440px;
+    width: calc(100% + 240px);
     border-bottom: 1px $border_color solid;
   }
 
@@ -28,8 +28,55 @@
 
   @media screen and (max-width: 1440px) {
     &:before {
-      width: calc(40px + 100%);
       left: -20px;
+      width: calc(100% + 40px);
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin: 0;
+    align-items: flex-start;
+
+    &:before,
+    &:after,
+    .wheel {
+      display: none;
+    }
+
+    .swiper {
+      position: relative;
+      top: 0;
+      height: 140px;
+    }
+
+    .text {
+      font-size: 150px;
+      line-height: 140px;
+      gap: 70px;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    .swiper {
+      height: 85px;
+    }
+
+    .text {
+      font-size: 90px;
+      line-height: 85px;
+      gap: 40px;
+    }
+  }
+
+  @media screen and (max-width: 440px) {
+    .swiper {
+      height: 72px;
+    }
+
+    .text {
+      font-size: 56px;
+      line-height: 72px;
+      gap: 35px;
     }
   }
 }
@@ -52,13 +99,21 @@
   justify-content: center;
   gap: 80px;
   user-select: none;
-
-  @media screen and (max-width: 1024px) {
-    font-size: 56px;
-    line-height: 72px;
-  }
 }
 
 .secondary {
   color: $secondary;
+}
+
+.title {
+  display: none;
+  margin: 40px 0 -40px 0;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+
+  @media screen and (max-width: 1200px) {
+    display: flex;
+  }
 }

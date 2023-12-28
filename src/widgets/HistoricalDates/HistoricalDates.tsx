@@ -13,11 +13,13 @@ export const HistoricalDates = () => {
     data,
     isNextDisabled,
     isPrevDisabled,
+    isMobile,
     selectBranch,
     onChange,
     handleNext,
     handlePrev,
     onSwiper,
+    setIsMobile,
   } = useBranchSelection();
 
   return (
@@ -38,8 +40,9 @@ export const HistoricalDates = () => {
         slides={periods.length}
         handleNext={handleNext}
         handlePrev={handlePrev}
+        isMobile={isMobile}
       />
-      <DatesSlider data={data} />
+      <DatesSlider setIsMobile={setIsMobile} isMobile={isMobile} data={data} />
     </div>
   );
 };

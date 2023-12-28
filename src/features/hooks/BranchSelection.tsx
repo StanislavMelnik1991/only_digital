@@ -4,7 +4,7 @@ import { type Swiper } from "swiper/types";
 import { useCallback, useState } from "react";
 
 export const useBranchSelection = () => {
-  const historyData = [...(mockData as IHistoricalData[])];
+  const [historyData] = useState([...(mockData as IHistoricalData[])]);
   const lastIndex = historyData.length - 1;
   const branches = historyData.map((val) => val.title);
   const periods: Array<[number, number]> = historyData.map((val) => {
@@ -15,6 +15,7 @@ export const useBranchSelection = () => {
   });
   const [active, setActive] = useState<number>(lastIndex);
   const [swiperRef, setSwipeRef] = useState<Swiper>();
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const [data, setData] = useState<
     Array<{
       year: number;
@@ -45,6 +46,9 @@ export const useBranchSelection = () => {
       changeData(activeIndex);
       setIsPrevDisabled(slider.isBeginning);
       setIsNextDisabled(slider.isEnd);
+      const { innerWidth } = window;
+
+      setIsMobile(innerWidth <= 1200);
     },
     [changeData],
   );
@@ -73,7 +77,9 @@ export const useBranchSelection = () => {
     onChange,
     handleNext,
     handlePrev,
+    setIsMobile,
     isPrevDisabled,
     isNextDisabled,
+    isMobile,
   };
 };

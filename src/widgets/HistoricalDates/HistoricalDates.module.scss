@@ -5,29 +5,30 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height: 100%;
   max-width: 1200px;
   min-height: 100vh;
   border: 1px $border_color solid;
   border-top: none;
   border-bottom: none;
   padding: 0 160px 0 80px;
+  margin: auto;
 
   @media screen and (max-width: 1440px) {
     padding: 20px;
-    margin: auto;
+
   }
-}
 
-.red {
-  background-color: red;
-}
+  @media screen and (max-width: 1200px) {
+    gap: 60px;
 
-.green {
-  background-color: green;
-}
+    >div {
+      order: 0;
 
-.currentClass {
-  display: flex;
-  padding: 10px;
-  background-color: blue;
+      &:nth-child(3) {
+        margin-top: auto;
+        order: 1;
+      }
+    }
+  }
 }

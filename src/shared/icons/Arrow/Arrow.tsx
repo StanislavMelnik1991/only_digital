@@ -4,8 +4,8 @@ const SvgComponent = (
   ref: Ref<SVGSVGElement>,
 ) => (
   <svg
-    width={10}
-    height={14}
+    width={props.width}
+    height={((props.width || 10) as number) * 1.5}
     viewBox="0 0 10 14"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
