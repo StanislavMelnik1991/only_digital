@@ -1,5 +1,3 @@
-# 🚀 Welcome to your new awesome project!
-
 This project has been created using **webpack-cli**, you can now run
 
 ```
@@ -12,4 +10,16 @@ or
 yarn build
 ```
 
-to bundle your application
+to bundle the application
+
+
+```
+npm run serve
+```
+
+or
+
+```
+yarn serve
+```
+to start the application
